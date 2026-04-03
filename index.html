@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupe de Football Fang Centre 2026</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'AlibabaSans-Medium';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/AlibabaSans-Medium.otf');
+        }
+        @font-face {
+            font-family: 'AlibabaSans-Regular';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/AlibabaSans-Regular.otf');
+        }
+        @font-face {
+            font-family: 'AlimamaShuHeiTi-Bold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/AlimamaShuHeiTi-Bold.otf');
+        }
+
+        :root {
+            --primary-blue: #0A2463;
+            --primary-green: #1B998B;
+            --accent-gold: #D4AF37;
+            --text-dark: #2D3142;
+            --text-light: #F8F9FA;
+            --bg-gray: #F4F5F7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'AlibabaSans-Regular', sans-serif;
+            color: var(--text-dark);
+            background-color: #fff;
+            width: 1920px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'AlimamaShuHeiTi-Bold', sans-serif;
+            line-height: 1.2;
+        }
+
+        .brochure-container {
+            width: 1920px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 40px;
+            background-color: var(--bg-gray);
+        }
+
+        .brochure-side {
+            display: flex;
+            width: 1840px;
+            height: 1200px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .panel {
+            flex: 1;
+            padding: 60px 40px;
+            border-right: 1px dashed rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .panel:last-child {
+            border-right: none;
+        }
+
+        /* Front Side Styling */
+        
+        /* Panel 1: Cover */
+        .panel-cover {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #153c94 100%);
+            color: var(--text-light);
+            text-align: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .cover-content {
+            z-index: 2;
+        }
+
+        .logo-placeholder {
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border: 2px dashed var(--accent-gold);
+            border-radius: 50%;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--accent-gold);
+        }
+
+        .cover-title {
+            font-size: 64px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cover-subtitle {
+            font-size: 24px;
+            color: var(--accent-gold);
+            font-family: 'AlibabaSans-Medium';
+            margin-bottom: 50px;
+        }
+
+        .cover-date {
+            background: var(--accent-gold);
+            color: var(--primary-blue);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-family: 'AlibabaSans-Medium';
+            display: inline-block;
+        }
+
+        .cover-image-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            opacity: 0.6;
+            overflow: hidden;
+        }
+        .cover-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Panel Headers */
+        .panel-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .panel-header i {
+            font-size: 40px;
+            color: var(--primary-green);
+            margin-right: 20px;
+        }
+
+        .panel-header h2 {
+            font-size: 36px;
+            color: var(--primary-blue);
+        }
+
+        /* Panel Content */
+        .content-block {
+            margin-bottom: 30px;
+        }
+
+        .content-block p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .list-items {
+            list-style: none;
+        }
+
+        .list-items li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .list-items li::before {
+            content: '•';
+            color: var(--primary-green);
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: -4px;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: auto;
+        }
+
+        .image-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-caption {
+            padding: 12px;
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: rgba(27, 153, 139, 0.1);
+            border-left: 4px solid var(--primary-green);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .info-box h3 {
+            color: var(--primary-green);
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Objectives Box - Modification pour alignement horizontal */
+        .objective-box {
+            background: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .objective-box .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--primary-blue);
+            margin-bottom: 0;
+            flex-shrink: 0;
+        }
+
+        .objective-box h3 {
+            font-size: 22px;
+            color: var(--primary-blue);
+            margin-bottom: 0;
+            flex: 1;
+        }
+
+        .objective-box p {
+            width: 100%;
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Partnership Cards */
+        .partner-card {
+            background: linear-gradient(180deg, #fff 0%, var(--bg-gray) 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .partner-card.gold {
+            border-top-color: var(--accent-gold);
+        }
+
+        .partner-card.green {
+            border-top-color: var(--primary-green);
+        }
+
+        .partner-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .gold h3 { color: var(--accent-gold); }
+        .green h3 { color: var(--primary-green); }
+
+        .price-tag {
+            font-size: 28px;
+            font-family: 'AlibabaSans-Medium';
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        /* Infographic Stats */
+        .stat-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-family: 'AlimamaShuHeiTi-Bold';
+            color: var(--primary-green);
+            width: 100px;
+        }
+
+        .stat-text {
+            font-size: 16px;
+            line-height: 1.4;
+            color: #555;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-green);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px var(--primary-green);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="brochure-container">
+    
+    <div class="brochure-side">
+        <div class="panel">
+            <div class="panel-header">
+                <i class="ri-team-fill"></i>
+                <h2>QUI NOUS SOMMES</h2>
+            </div>
+            
+            <div class="content-block">
+                <p><strong>La Fraternelle</strong> est le moteur de l'unité du canton Fang Centre (Djoum). Elle mobilise les forces vives pour transformer le sport en levier de développement communautaire et de solidarité inter-villageoise.</p>
+                <p>Notre mission est de pérenniser l'héritage culturel Fang tout en offrant à notre jeunesse un cadre d'expression sain et structuré.</p>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="ri-map-pin-2-fill"></i> Les 15 Villages Unifiés</h3>
+                <ul class="list-items" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+                    <li style="font-weight: bold; color: var(--primary-blue);">BINDOUMBA <span style="font-size: 10px; background: var(--primary-green); color: white; padding: 1px 4px; border-radius: 3px;">HÔTE 2026</span></li>
+                    <li>Nkan</li>
+                    <li>Minko'oo</li>
+                    <li>Akontangan</li>
+                    <li>Melen</li>
+                    <li>Doum</li>
+                    <li>Ayene</li>
+                    <li>Mfem</li>
+                    <li>Essong</li>
+                    <li>Alat</li>
+                    <li>Mebane</li>
+                    <li>Ten</li>
+                    <li>Opweng</li>
+                    <li>Nkol-Enyeng</li>
+                </ul>
+            </div>
+
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="images/Image-2026-03-07-AG7.png" alt="AG">
+                    <div class="image-caption">Assemblée Générale de révision des textes de la Fraternelle</div>
+                </div>
+                <div class="image-card">
+                    <img src="images/Image-2026-03-07-AG4.png" alt="Plénière">
+                    <div class="image-caption">Travaux en plénière de l'Assemblée Générale</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <i class="ri-football-fill"></i>
+                <h2>CE QUE NOUS FAISONS</h2>
+            </div>
+            
+            <div class="content-block">
+                <p>La Coupe de Football Fang Centre est notre événement phare. Plus qu'un simple tournoi, c'est une véritable célébration sportive et culturelle qui rythme la vie de notre canton.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Cérémonie d'ouverture</div>
+                    <p>Défilé, discours officiels et match inaugural.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Phase de poules</div>
+                    <p>Compétition intense entre les équipes des différents villages.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Grande Finale</div>
+                    <p>Apothéose du tournoi et remise des trophées.</p>
+                </div>
+            </div>
+
+            <div class="image-grid" style="margin-top: 30px;">
+                <div class="image-card">
+                    <img src="images/Image-2026-03-07-AG2.png" alt="Ouverture">
+                    <div class="image-caption">Cérémonie d'ouverture par le Chef du village Minko'oo</div>
+                </div>
+                <div class="image-card">
+                    <img src="images/Image-2026-03-25-AG6.png" alt="Participants">
+                    <div class="image-caption">Photo de famille des participants</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="panel panel-cover">
+            <div class="cover-content">
+                <div class="logo-placeholder">
+                    <i class="ri-trophy-fill"></i>
+                </div>
+                <h1 class="cover-title">Coupe de Football<br>Fang Centre</h1>
+                <div class="cover-subtitle">Édition 2026</div>
+                <div class="cover-date">
+                    <i class="ri-calendar-event-line"></i> Aout 2026
+                </div>
+            </div>
+            <div class="cover-image-container">
+                <img src="https://a.lovart.ai/artifacts/user/4nk4hq1kE7BA2HXB.png" alt="Action">
+            </div>
+        </div>
+    </div>
+
+    <div class="brochure-side">
+        <div class="panel">
+            <div class="panel-header">
+                <i class="ri-star-smile-fill"></i>
+                <h2>POURQUOI C'EST IMPORTANT</h2>
+            </div>
+            
+            <div class="objective-box">
+                <div class="icon-wrapper">
+                    <i class="ri-group-fill"></i>
+                </div>
+                <h3>Cohésion Sociale</h3>
+                <p>Renforcer les liens fraternels entre les jeunes des différents villages du canton à travers les valeurs nobles du sport.</p>
+            </div>
+
+            <div class="objective-box">
+                <div class="icon-wrapper">
+                    <i class="ri-run-line"></i>
+                </div>
+                <h3>Développement Sportif</h3>
+                <p>Détecter et promouvoir les jeunes talents locaux, en leur offrant une plateforme d'expression compétitive et saine.</p>
+            </div>
+
+            <div class="objective-box">
+                <div class="icon-wrapper">
+                    <i class="ri-earth-fill"></i>
+                </div>
+                <h3>Rayonnement Culturel</h3>
+                <p>Mettre en valeur le patrimoine culturel de la région Fang Centre lors des cérémonies d'ouverture et de clôture.</p>
+            </div>
+            
+            <div class="image-grid" style="margin-top: auto;">
+                <div class="image-card">
+                    <img src="images/ImageElite 2026-03-21-1.png" alt="Match">
+                    <div class="image-caption">Action de jeu lors de l'Édition 2025</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <i class="ri-hand-heart-fill"></i>
+                <h2>CE DONT NOUS AVONS BESOIN</h2>
+            </div>
+            
+            <div class="content-block">
+                <p>Pour assurer le succès de cette édition, nous sollicitons l'accompagnement de partenaires partageant nos valeurs.</p>
+            </div>
+
+            <div class="partner-card gold">
+                <h3>Pack Premium</h3>
+                <div class="price-tag">Besoins Financiers</div>
+                <ul class="list-items">
+                    <li>Sponsoring officiel de l'événement</li>
+                    <li>Prise en charge des primes d'équipes</li>
+                    <li>Frais d'organisation générale</li>
+                </ul>
+            </div>
+
+            <div class="partner-card green">
+                <h3>Pack Logistique</h3>
+                <div class="price-tag">Besoins Matériels</div>
+                <ul class="list-items">
+                    <li>Équipements sportifs (Maillots, ballons)</li>
+                    <li>Trophées et médailles</li>
+                    <li>Rafraîchissements pour les joueurs</li>
+                </ul>
+            </div>
+            
+            <div class="info-box" style="margin-top: 20px;">
+                <h3><i class="ri-information-fill"></i> Comment contribuer ?</h3>
+                <p style="font-size: 14px;">Contactez le comité d'organisation pour discuter des opportunités de partenariat sur mesure.</p>
+            </div>
+            
+            <div class="image-grid" style="margin-top: auto;">
+                <div class="image-card">
+                    <img src="https://a.lovart.ai/artifacts/user/lTHmN9ah0s8lnOk1.png" alt="Match 2">
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <i class="ri-bar-chart-box-fill"></i>
+                <h2>IMPACT ET VISIBILITÉ</h2>
+            </div>
+            
+            <div style="margin-bottom: 40px;">
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-text">Villages participants mobilisant toute la communauté</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500</div>
+                    <div class="stat-text">Jeunes sportifs directement impliqués dans le tournoi</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2k</div>
+                    <div class="stat-text">Spectateurs attendus tout au long de la compétition</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="ri-megaphone-fill"></i> Votre Visibilité</h3>
+                <ul class="list-items">
+                    <li>Logo sur les équipements officiels</li>
+                    <li>Banderoles autour du stade</li>
+                    <li>Mentions lors des discours</li>
+                    <li>Visibilité sur nos réseaux sociaux</li>
+                </ul>
+            </div>
+
+            <div class="image-grid" style="margin-top: auto;">
+                <div class="image-card">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15949.123456789!2d12.65!3d2.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108990123456789%3A0x1234567890abcdef!2sDjoum%2C%20Cameroun!5e0!3m2!1sfr!2scm!4v1700000000000!5m2!1sfr!2scm" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="image-caption">Localisation : Ville de Djoum, Sud Cameroun</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px; text-align: center; padding: 20px; background: var(--primary-blue); color: #fff; border-radius: 8px;">
+                <h4 style="margin-bottom: 10px;">Rejoignez l'aventure !</h4>
+                <p style="font-size: 14px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b4d7dbdac0d5d7c0f4d2c6d5c0d1c6dad1d8d8d199d2d5dad3d7d1dac0c6d19adbc6d3">[email&#160;protected]</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
