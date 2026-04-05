@@ -6,131 +6,180 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
     <style>
         :root {
+            --brand-green: #2E7D32; 
+            --brand-yellow: #FDD835;
             --navy: #0A2463;
-            --emerald: #1B998B;
-            --gold: #B38728;
             --light-gray: #f8f9fa;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact !important; }
         
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             width: 210mm;
             height: 297mm;
             margin: 0 auto;
             padding: 12mm;
             color: #333;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Force le contenu à s'étendre sur toute la hauteur */
         }
 
         .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid var(--navy);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            border-bottom: 5px solid var(--brand-green);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .logo-box {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .header-text {
+            text-align: right;
+            flex: 1;
+        }
+
+        .main-title { 
+            font-size: 26px; 
+            color: var(--brand-green); 
+            text-transform: uppercase; 
+            font-weight: 900;
+            margin-bottom: 5px;
         }
 
         .impact-badge {
-            background: var(--navy);
+            background: var(--brand-green);
             color: white;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 11px;
-            text-align: center;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            margin-top: 8px;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .main-title { font-size: 22px; color: var(--navy); text-transform: uppercase; }
-
-        /* Tableau Comparatif Rapide */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-            font-size: 10px;
-        }
-        .comparison-table th { background: #eee; padding: 5px; border: 1px solid #ddd; }
-        .comparison-table td { padding: 5px; border: 1px solid #ddd; text-align: center; }
-
-        /* Cards Layout */
         .grid-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
+            flex-grow: 1; /* Remplit l'espace central */
         }
 
         .card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 12px;
             overflow: hidden;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            transition: all 0.3s ease;
         }
 
         .card-h {
-            padding: 12px;
+            padding: 15px;
             color: white;
             font-weight: bold;
             text-align: center;
+            font-size: 15px;
+            position: relative;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .c-platine { background: linear-gradient(135deg, #1a2a3a, #4b5d67); }
+        .c-gold { background: linear-gradient(135deg, #FFC107, #B38728); color: #000; }
+        .c-silver { background: linear-gradient(135deg, #757575, #BDBDBD); }
+        .c-sante { background: linear-gradient(135deg, #2E7D32, #81C784); }
+
+        .card-b { 
+            padding: 15px; 
+            flex-grow: 1; 
+            display: flex;
+            align-items: center; /* Centre le texte verticalement si peu de contenu */
+        }
+
+        .card-b ul { list-style: none; width: 100%; }
+        
+        .card-b li {
+            font-size: 11.5px;
+            margin-bottom: 8px;
+            padding-left: 22px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .card-b li::before {
+            content: "\f26b"; font-family: 'remixicon';
+            position: absolute; left: 0; color: var(--brand-green);
             font-size: 14px;
         }
 
-        .c-platine { background: linear-gradient(135deg, #2c3e50, #bdc3c7); }
-        .c-gold { background: linear-gradient(135deg, #B38728, #f1c40f); }
-        .c-silver { background: linear-gradient(135deg, #7f8c8d, #bdc3c7); }
-        .c-sante { background: linear-gradient(135deg, #1B998B, #2ecc71); }
-
-        .card-b { padding: 12px; height: 180px; }
-        .card-b ul { list-style: none; }
-        .card-b li {
-            font-size: 11px;
-            margin-bottom: 6px;
-            padding-left: 18px;
-            position: relative;
-        }
-        .card-b li::before {
-            content: "\f26b"; font-family: 'remixicon';
-            position: absolute; left: 0; color: var(--navy);
-        }
-
         .exclusive-tag {
-            position: absolute; top: 5px; right: 5px;
-            background: rgba(255,255,255,0.2);
-            padding: 2px 6px; font-size: 9px; border-radius: 10px;
+            position: absolute; top: 6px; right: 10px;
+            background: rgba(255,255,255,0.4);
+            padding: 2px 8px; font-size: 9px; border-radius: 20px;
+            font-weight: 900;
         }
 
         .cost-tag {
             display: block;
-            margin-top: 5px;
-            font-size: 16px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            margin-top: 6px;
+            font-size: 20px;
+            font-weight: 900;
         }
 
         .footer-box {
             margin-top: 20px;
-            border: 1px solid var(--navy);
-            padding: 10px;
+            border: 3px solid var(--brand-yellow);
+            padding: 15px;
             display: flex;
             justify-content: space-around;
             background: var(--light-gray);
-            border-radius: 5px;
+            border-radius: 10px;
         }
 
-        .trust-item { font-size: 10px; text-align: center; font-weight: bold; }
-        .trust-item i { display: block; font-size: 18px; color: var(--navy); margin-bottom: 3px; }
+        .trust-item { font-size: 11px; text-align: center; font-weight: 800; color: var(--brand-green); }
+        .trust-item i { display: block; font-size: 24px; color: var(--brand-yellow); margin-bottom: 5px; }
 
+        .footer-note {
+            text-align: center;
+            font-size: 11px;
+            margin-top: 15px;
+            font-style: italic;
+            color: #444;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
 
     <div class="header-top">
-        <div>
-            <h1 class="main-title">Offres de Partenariat 2026</h1>
-            <p style="font-size: 12px; color: var(--emerald);">"Excellence, Transparence & Cohésion Sociale"</p>
+        <div class="logo-box">
+            <img src="images/logofraternelle.png" alt="Logo La Fraternelle">
         </div>
-        <div class="impact-badge">
-            <strong>IMPACT ESTIMÉ</strong><br>
-            5 000+ Spectateurs | 15 Villages | Digital
+        <div class="header-text">
+            <h1 class="main-title">Offres de Partenariat 2026</h1>
+            <p style="font-size: 13px; color: var(--brand-green); font-weight: bold; letter-spacing: 0.5px;">"Culture - Fraternité - Solidarité"</p>
+            <div class="impact-badge">
+                <strong>IMPACT :</strong> 5 000+ Spectateurs | 14 Villages | Digital
+            </div>
         </div>
     </div>
 
@@ -149,7 +198,7 @@
                     <li><strong>Hospitalité :</strong> 5 Invitations VIP au cocktail de clôture.</li>
                     <li><strong>Micro :</strong> Citation de remerciement systématique.</li>
                     <li><strong>Réseaux :</strong> Mention dans l'album photo hebdomadaire.</li>
-					<li><strong>Démonstration Terrain :</strong> Accès exclusif au centre du terrain pendant 5 minutes à la mi-temps pour une présentation de produits.</li>
+                    <li><strong>Démonstration Terrain :</strong> Accès exclusif au centre du terrain pendant 5 minutes à la mi-temps pour une présentation de produits.</li>
                     <li><strong>Digital :</strong> 1 Vidéo de présentation sur nos réseaux.</li>
                 </ul>
             </div>
@@ -183,24 +232,25 @@
                     <li><strong>Démonstration Terrain :</strong> Animation terrain (10 min) avant matche pour démo.</li>
                     <li><strong>Terrain :</strong> 1 Banderole de bord de touche.</li>
                     <li><strong>Réseaux :</strong> Mention dans l'album photo hebdomadaire.</li>
-					<li><strong>Publicité :</strong> Lecture d'un spot publicitaire de 30 secondes par le speaker à chaque pause.</li>
+                    <li><strong>Publicité :</strong> Lecture d'un spot publicitaire de 30 secondes par le speaker à chaque pause.</li>
                 </ul>
             </div>
         </div>
 
-	<div class="card">
-				<div class="card-h c-sante">
-					<i class="ri-heart-3-fill"></i> PACK ELITE : SANTÉ & SOLIDARITÉ
-				</div>
-				<div class="card-b">
-					<ul>
-						<li><strong>Élite de Cœur (< 100k) :</strong> Citation de remerciement systématique lors de la cérémonie de clôture.</li>
-						<li><strong>Bienfaiteur (≥ 100k) :</strong> Remise du Diplôme de Distinction sur le podium de la Finale.</li>
-						<li><strong>Protecteur (≥ 500k) :</strong> Citation de remerciement systématique à chaque mi-temps (Poules).</li>
-						<li><strong>Mécène (≥ 1M) :</strong> Inscription au Livre d'Or et citation de remerciement systématique à CHAQUE match du tournoi.</li>
-					</ul>
-				</div>
-			</div>
+        <div class="card">
+            <div class="card-h c-sante">
+                <i class="ri-heart-3-fill"></i> PACK ELITE : SANTÉ & SOLIDARITÉ
+                <span class="cost-tag">Soutien Variable</span>
+            </div>
+            <div class="card-b">
+                <ul>
+                    <li><strong>Élite de Cœur (&lt; 100k) :</strong> Citation de remerciement systématique lors de la cérémonie de clôture.</li>
+                    <li><strong>Bienfaiteur (≥ 100k) :</strong> Remise du Diplôme de Distinction sur le podium de la Finale.</li>
+                    <li><strong>Protecteur (≥ 500k) :</strong> Citation de remerciement systématique à chaque mi-temps (Poules).</li>
+                    <li><strong>Mécène (≥ 1M) :</strong> Inscription au Livre d'Or et citation de remerciement systématique à CHAQUE match du tournoi.</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="footer-box">
@@ -210,7 +260,7 @@
         <div class="trust-item"><i class="ri-customer-service-2-fill"></i> SUPPORT DÉDIÉ</div>
     </div>
 
-    <p style="text-align: center; font-size: 10px; margin-top: 15px; font-style: italic;">
+    <p class="footer-note">
         Pour toute demande personnalisée ou sponsoring en nature, veuillez contacter le Bureau Directeur.
     </p>
 
