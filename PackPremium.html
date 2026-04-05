@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Offres de Partenariat Prestige - 2026</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --brand-green: #2E7D32; 
+            --brand-yellow: #FDD835;
+            --navy: #0A2463;
+            --light-gray: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact !important; }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 12mm;
+            color: #333;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Force le contenu à s'étendre sur toute la hauteur */
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid var(--brand-green);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .logo-box {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .header-text {
+            text-align: right;
+            flex: 1;
+        }
+
+        .main-title { 
+            font-size: 26px; 
+            color: var(--brand-green); 
+            text-transform: uppercase; 
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+
+        .impact-badge {
+            background: var(--brand-green);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            margin-top: 8px;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            flex-grow: 1; /* Remplit l'espace central */
+        }
+
+        .card {
+            border: 1.5px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .card-h {
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 15px;
+            position: relative;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .c-platine { background: linear-gradient(135deg, #1a2a3a, #4b5d67); }
+        .c-gold { background: linear-gradient(135deg, #FFC107, #B38728); color: #000; }
+        .c-silver { background: linear-gradient(135deg, #757575, #BDBDBD); }
+        .c-sante { background: linear-gradient(135deg, #2E7D32, #81C784); }
+
+        .card-b { 
+            padding: 15px; 
+            flex-grow: 1; 
+            display: flex;
+            align-items: center; /* Centre le texte verticalement si peu de contenu */
+        }
+
+        .card-b ul { list-style: none; width: 100%; }
+        
+        .card-b li {
+            font-size: 11.5px;
+            margin-bottom: 8px;
+            padding-left: 22px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .card-b li::before {
+            content: "\f26b"; font-family: 'remixicon';
+            position: absolute; left: 0; color: var(--brand-green);
+            font-size: 14px;
+        }
+
+        .exclusive-tag {
+            position: absolute; top: 6px; right: 10px;
+            background: rgba(255,255,255,0.4);
+            padding: 2px 8px; font-size: 9px; border-radius: 20px;
+            font-weight: 900;
+        }
+
+        .cost-tag {
+            display: block;
+            margin-top: 6px;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .footer-box {
+            margin-top: 20px;
+            border: 3px solid var(--brand-yellow);
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+
+        .trust-item { font-size: 11px; text-align: center; font-weight: 800; color: var(--brand-green); }
+        .trust-item i { display: block; font-size: 24px; color: var(--brand-yellow); margin-bottom: 5px; }
+
+        .footer-note {
+            text-align: center;
+            font-size: 11px;
+            margin-top: 15px;
+            font-style: italic;
+            color: #444;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-top">
+        <div class="logo-box">
+            <img src="images/logofraternelle.png" alt="Logo La Fraternelle">
+        </div>
+        <div class="header-text">
+            <h1 class="main-title">Offres de Partenariat 2026</h1>
+            <p style="font-size: 13px; color: var(--brand-green); font-weight: bold; letter-spacing: 0.5px;">"Culture - Fraternité - Solidarité"</p>
+            <div class="impact-badge">
+                <strong>IMPACT :</strong> 5 000+ Spectateurs | 14 Villages | Digital
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-layout">
+        <div class="card">
+            <div class="card-h c-platine">
+                <span class="exclusive-tag">UNIQUE</span>
+                <i class="ri-government-fill"></i> PACK PLATINE
+                <span class="cost-tag">5 000 000 FCFA</span>
+            </div>
+            <div class="card-b">
+                <ul>
+                    <li><strong>Naming :</strong> Trophée au nom de l'entreprise.</li>
+                    <li><strong>Branding :</strong> Logo face avant (Maillots Finalistes).</li>
+                    <li><strong>Protocole :</strong> Accès Tribune d'Honneur & Remise du prix.</li>
+                    <li><strong>Hospitalité :</strong> 5 Invitations VIP au cocktail de clôture.</li>
+                    <li><strong>Micro :</strong> Citation de remerciement systématique.</li>
+                    <li><strong>Réseaux :</strong> Mention dans l'album photo hebdomadaire.</li>
+                    <li><strong>Démonstration Terrain :</strong> Accès exclusif au centre du terrain pendant 5 minutes à la mi-temps pour une présentation de produits.</li>
+                    <li><strong>Digital :</strong> 1 Vidéo de présentation sur nos réseaux.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-h c-gold">
+                <i class="ri-medal-2-fill"></i> PACK OR
+                <span class="cost-tag">1 500 000 FCFA</span>
+            </div>
+            <div class="card-b">
+                <ul>
+                    <li><strong>Visibilité :</strong> Logo sur les feuilles de match.</li>
+                    <li><strong>Exposition :</strong> Stand de vente prioritaire (30m²).</li>
+                    <li><strong>Awards :</strong> Parrainage du prix de "L’Homme du Match" ou "Meilleur Buteur, Meilleur Joueur, ...".</li>
+                    <li><strong>Micro :</strong> Publicité speaker (5 passages/match).</li>
+                    <li><strong>Micro :</strong> Citation de remerciement systématique.</li>
+                    <li><strong>Réseaux :</strong> Mention dans l'album photo hebdomadaire.</li>
+                    <li><strong>Hospitalité :</strong> 2 Invitations Tribune d'Honneur.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-h c-silver">
+                <i class="ri-advertisement-fill"></i> PACK ARGENT
+                <span class="cost-tag">500 000 FCFA</span>
+            </div>
+            <div class="card-b">
+                <ul>
+                    <li><strong>Démonstration Terrain :</strong> Animation terrain (10 min) avant matche pour démo.</li>
+                    <li><strong>Terrain :</strong> 1 Banderole de bord de touche.</li>
+                    <li><strong>Réseaux :</strong> Mention dans l'album photo hebdomadaire.</li>
+                    <li><strong>Publicité :</strong> Lecture d'un spot publicitaire de 30 secondes par le speaker à chaque pause.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-h c-sante">
+                <i class="ri-heart-3-fill"></i> PACK ELITE : SANTÉ & SOLIDARITÉ
+                <span class="cost-tag">Soutien Variable</span>
+            </div>
+            <div class="card-b">
+                <ul>
+                    <li><strong>Élite de Cœur (&lt; 100k) :</strong> Citation de remerciement systématique lors de la cérémonie de clôture.</li>
+                    <li><strong>Bienfaiteur (≥ 100k) :</strong> Remise du Diplôme de Distinction sur le podium de la Finale.</li>
+                    <li><strong>Protecteur (≥ 500k) :</strong> Citation de remerciement systématique à chaque mi-temps (Poules).</li>
+                    <li><strong>Mécène (≥ 1M) :</strong> Inscription au Livre d'Or et citation de remerciement systématique à CHAQUE match du tournoi.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-box">
+        <div class="trust-item"><i class="ri-shield-check-fill"></i> EXCLUSIVITÉ SECTORIELLE</div>
+        <div class="trust-item"><i class="ri-file-list-3-fill"></i> AUDIT FINANCIER (J+15)</div>
+        <div class="trust-item"><i class="ri-hand-heart-fill"></i> ÉTHIQUE & DISCIPLINE</div>
+        <div class="trust-item"><i class="ri-customer-service-2-fill"></i> SUPPORT DÉDIÉ</div>
+    </div>
+
+    <p class="footer-note">
+        Pour toute demande personnalisée ou sponsoring en nature, veuillez contacter le Bureau Directeur.
+    </p>
+
+</body>
+</html>
