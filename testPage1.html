@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* SEULE MODIFICATION : Configuration PDF A4 Paysage et Page Unique */
+        @page {
+            size: A4 landscape;
+            margin: 5mm;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Empêche la création d'une deuxième page */
+        }
+        /* FIN DE LA MODIFICATION */
+
+        /* Votre code initial commence ici - Inchangé */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #333;
+            background-color: #fdfaf6;
+        }
+        .header {
+            background-color: #8b4513;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #d2691e;
+        }
+        .container {
+            padding: 20px;
+        }
+        .intro-box {
+            background-color: white;
+            border: 1px solid #e0d0b0;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .content-grid {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .content-grid td {
+            vertical-align: top;
+            padding: 10px;
+            width: 50%;
+        }
+        .info-card {
+            background: #fff;
+            padding: 15px;
+            border-left: 5px solid #8b4513;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>La Fraternelle Fang</h1>
+        <p>Espace de Promotion et de Sauvegarde du Patrimoine Culturel</p>
+    </div>
+
+    <div class="container">
+        <div class="intro-box">
+            <h2>Portail IndexNew22</h2>
+            <p>Accès aux ressources documentaires et projets de la communauté.</p>
+        </div>
+
+        <table class="content-grid">
+            <tr>
+                <td>
+                    <div class="info-card">
+                        <h3>Patrimoine</h3>
+                        <p>Rites et traditions ancestrales.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="info-card">
+                        <h3>Vie Sociale</h3>
+                        <p>Actualités et projets membres.</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
